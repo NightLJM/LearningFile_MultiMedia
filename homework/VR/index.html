@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>选题6</title>
+	
+    <script src="js/aframe.0.7.0.min.js"></script>
+    <script src="js/aframe-extras.min.js"></script>
+
+    <script src="js/lzma.js"></script>
+    <script src="js/ctm.js"></script>
+    <script src="js/CTMLoader.js"></script>
+
+    <script src="js/aframe-teleport-controls.min.js"></script>
+    <script src="js/spheres_anim.js"></script>
+    <script src="js/anim_1.js"></script>
+    <script src="js/anim_2.js"></script>
+    <script src="js/mocap.js"></script>
+    <script src="js/envMapMaterial.js"></script>
+    <script src="js/ctm_component.js"></script>
+    <script src="js/mobile_component.js"></script>
+
+  </head>
+
+  <body>
+
+   
+
+    <!--<a-scene stats>-->
+
+    <a-scene>
+
+      <a-entity light="type: directional; color: #FFF; intensity: 0.5" position="2 20 0"></a-entity>
+      <a-entity light="type: ambient; color: #FFF"></a-entity>
+
+      <!-- - Custom components with animations -->
+
+      <a-assets>
+        <img id="sky_sphere-texture" src="textures/universe.jpg">
+ 
+		<a-asset-item id="floor_obj"  src="maxmodel/objmodel/floor.obj" ></a-asset-item>
+		<a-asset-item id="floor_mtl"  src="maxmodel/objmodel/floor.mtl" ></a-asset-item>
+		
+		<a-asset-item id="floor1_obj"  src="maxmodel/objmodel/floor1.obj" ></a-asset-item>
+		<a-asset-item id="floor1_mtl"  src="maxmodel/objmodel/floor1.mtl" ></a-asset-item>
+		
+		<a-asset-item id="aircondition_obj"  src="maxmodel/objmodel/aircondition.obj" ></a-asset-item>
+		<a-asset-item id="aircondition_mtl"  src="maxmodel/objmodel/aircondition.mtl" ></a-asset-item>
+		
+		<a-asset-item id="blackboard_obj"  src="maxmodel/objmodel/blackboard.obj" ></a-asset-item>
+		<a-asset-item id="blackboard_mtl"  src="maxmodel/objmodel/blackboard.mtl" ></a-asset-item>
+		
+		<a-asset-item id="ceiling_obj"  src="maxmodel/objmodel/ceiling.obj" ></a-asset-item>
+		<a-asset-item id="ceiling_mtl"  src="maxmodel/objmodel/ceiling.mtl" ></a-asset-item>
+		
+		<a-asset-item id="curtain_obj"  src="maxmodel/objmodel/curtain.obj" ></a-asset-item>
+		<a-asset-item id="curtain_mtl"  src="maxmodel/objmodel/curtain.mtl" ></a-asset-item>
+		
+		<a-asset-item id="door_obj"  src="maxmodel/objmodel/door.obj" ></a-asset-item>
+		<a-asset-item id="door_mtl"  src="maxmodel/objmodel/door.mtl" ></a-asset-item>
+		
+		<a-asset-item id="wall_obj"  src="maxmodel/objmodel/wall.obj" ></a-asset-item>
+		<a-asset-item id="wall_mtl"  src="maxmodel/objmodel/wall.mtl" ></a-asset-item>
+		
+		<a-asset-item id="deskgroup_obj"  src="maxmodel/objmodel/deskgroup.obj" ></a-asset-item>
+		<a-asset-item id="deskgroup_mtl"  src="maxmodel/objmodel/deskgroup.mtl" ></a-asset-item>
+		
+		<a-asset-item id="exia_obj"  src="maxmodel/objmodel/exia.obj" ></a-asset-item>
+		<a-asset-item id="exia_mtl"  src="maxmodel/objmodel/exia.mtl" ></a-asset-item>
+		
+		<a-asset-item id="logo1_obj"  src="maxmodel/objmodel/logo1.obj" ></a-asset-item>
+		<a-asset-item id="logo2_obj"  src="maxmodel/objmodel/logo2.obj" ></a-asset-item>
+		<a-asset-item id="logo3_obj"  src="maxmodel/objmodel/logo3.obj" ></a-asset-item>
+
+      </a-assets>
+
+      <a-sky color="#EEEEFF" material="src: #sky_sphere-texture"></a-sky>
+
+       <a-entity obj-model="obj: #floor_obj;  mtl: #floor_mtl" > </a-entity >
+	   <a-entity obj-model="obj: #floor1_obj;  mtl: #floor1_mtl" > </a-entity >
+	   <a-entity obj-model="obj: #aircondition_obj;  mtl: #aircondition_mtl" > </a-entity >
+	   <a-entity obj-model="obj: #blackboard_obj;  mtl: #blackboard_mtl" > </a-entity >
+	   <a-entity obj-model="obj: #ceiling_obj;  mtl: #ceiling_mtl" > </a-entity >
+	   <a-entity obj-model="obj: #curtain_obj;  mtl: #curtain_mtl" > </a-entity >
+	   <a-entity obj-model="obj: #door_obj;  mtl: #door_mtl" > </a-entity >
+	   <a-entity obj-model="obj: #wall_obj;  mtl: #wall_mtl" > </a-entity >
+	   <a-entity obj-model="obj: #deskgroup_obj;  mtl: #deskgroup_mtl" > </a-entity >
+	   
+	   <a-entity obj-model="obj: #logo1_obj;"  material="color: #00FF00;" > 
+			<a-animation attribute="material.color" from="#00FF00" to="#0000FF" dur="3000" repeat="indefinite" direction="alternate"></a-animation>
+	   </a-entity >
+	   <a-entity obj-model="obj: #logo2_obj;" material="color: #FFFFF;">  </a-entity >
+	   <a-entity obj-model="obj: #logo3_obj;" material="color: #00FF00;">
+		<a-animation attribute="material.color" from="#0000FF" to="#00FF00" dur="3000" repeat="indefinite" direction="alternate"></a-animation>
+	   </a-entity >
+	   
+	   
+	   <a-entity>  
+	   <a-entity>
+	   <a-entity obj-model="obj: #exia_obj;  mtl: #exia_mtl"> 
+	   <!--a-animation attribute="rotation" dur="10000" easing="linear" to="0 0 360" repeat="indefinite"></a-animation-->
+	   </a-entity >
+	   </a-entity >
+	   </a-entity >
+	   
+		<a-camera>
+		</a-camera>
+	   
+    </a-scene>
+
+    <script src="main.js"></script>
+
+    <script>
+
+    </script>
+
+  </body>
+
+</html>
